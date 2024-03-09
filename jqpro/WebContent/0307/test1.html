@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script>
+// //id=jqbtn을 검색  -script 방식
+// window.onload = function(){
+//    	document.getElementVyId('jqbtn');
+// 	document.querySelector('#jqbtn');
+	
+// 	//jquery방식으로 검색	
+// 	$('#jqbtn')
+// }
+
+$(document).ready(function(){
+// 	//id=jqbtn을 검색  -script 방식
+
+// 	sbut= document.getElementById('jqbtn');
+// 	sbut = document.querySelector('#jqbtn');
+	
+// 	sbut.addEventListener('click',function(){
+		
+// 	})
+	
+	
+	//jquery방식으로 검색- 이벤트 설정
+	$('#jqbtn').on('click', function(){
+        
+		
+		//hlist = document.querySelectorAll('#result2 h1');
+		//hlist.style.color
+		hlist = $('#result2 h1');
+		hlist.css('color', 'blue');
+		
+	})
+})
+
+
+
+proc1 = ()=>{
+	//hlist = document.getElementsByTagName('h1');
+	hlist = document.querySelectorAll('#result1 h1');
+	
+	
+	
+	for(i=0; i<hlist.length; i++){
+		
+	hlist[i].style.color="red";
+		
+	}
+	
+	
+	
+}
+
+</script>
+</head>
+<body>
+
+<div class="box">
+  <h4>java script방식<br>
+  h1태그를 검색해서 글자색을 변경한다. 
+  
+  </h4>
+  <input type="button" value="확인" onclick="proc1()">
+  <br><br>
+  <div id="result1">
+    <h1>무궁화 꽃이 피었습니다. </h1>
+    <h1>장미 꽃이 피었습니다. </h1>
+    <h1>벚꽃이 피었습니다. </h1>
+    <h1>개나리 꽃이 피었습니다. </h1>
+  
+  </div>
+
+</div>
+<div class="box">
+  <h4>jquery방식<br>
+  h1태그를 검색해서 글자색을 변경한다. 
+  button에 이벤트를 설정</h4>
+  <input type="button" value="확인" id="jqbtn">
+  <br><br>
+  <div id="result2">
+    <h1>무궁화 꽃이 피었습니다. </h1>
+    <h1>장미 꽃이 피었습니다. </h1>
+    <h1>벚꽃이 피었습니다. </h1>
+    <h1>개나리 꽃이 피었습니다. </h1>
+  
+  </div>
+
+</div>
+
+</body>
+</html>

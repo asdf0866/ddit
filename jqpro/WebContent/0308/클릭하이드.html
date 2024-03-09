@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script>
+show = (but) =>{
+	//but는 this를 넘겨받은 매개변수, 지역변수
+	
+	//dom변수 but가 css()메소드를 사용하려면 but변수를 jquery변수로 변경
+	//$(but).css('display' , "none");
+	
+	//$('#result1 h1').css('display', 'block');
+	
+	$(but).hide();
+	$('#result1 h1').show();
+	
+}
+$(document).ready(function(){
+	
+	$('h1').on('click', function(){
+		//클릭한 h1요소를 this로 받는다
+		//this dom변수  - style 이용
+// 		this.style.display = "none";
+		
+		//this는 dom변수가 jquery메소드 css()를 사용하기 위해서  
+		//DOM변수 타입을 Jquery 변수 타입으로 변경
+// 	 	$(this).css('display', "none");
+		$(this).hide();
+		
+		//다 사라졌는지 비교 - 보이는 갯수가 0이면
+		if($('h1:visible').length <1 ) 
+			
+			$('input[value=보이기]').show();
+// 			$('input[value=보이기]').css('display', 'block');
+	
+	})
+})
+
+$('h1')
+</script>
+<style>
+input[value=보이기]{
+  display: none;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h4>h1요소를 클릭하면 사라지도록 설정</h4>
+  
+  <br><br>
+  <div id="result1">
+    <h1>클릭하면 사라집니다.1</h1>
+    <h1>클릭하면 사라집니다.2</h1>
+    <h1>클릭하면 사라집니다.3</h1>
+    <h1>클릭하면 사라집니다.4</h1>
+    <h1>클릭하면 사라집니다.5</h1>
+    <h1>클릭하면 사라집니다.6</h1>
+    <h1>클릭하면 사라집니다.7</h1>
+    <h1>클릭하면 사라집니다.8</h1>
+    <h1>클릭하면 사라집니다.9</h1>
+    <h1>클릭하면 사라집니다.10</h1>
+  </div>
+  <input type = "button" value="보이기" onclick="show(this)">
+</div>
+
+</body>
+</html>

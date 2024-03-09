@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<script src="../js/jquery-3.7.1.min.js"></script>
+<style>
+.box input[type=button]{
+  width : 120px;
+}
+form{
+ 	margin : 10px;
+ 	padding:10px;
+ 	border : 1px dotted green;
+}
+p{
+ color: blue;
+}
+</style>
+<script>
+// $(document).ready(function(){})
+// window.onload= function(){}
+
+$(function(){
+
+	$('#btn1').on('click', function(){
+		//모든 p태그를 선택
+		$('p').css('font-size', '1.2rem');
+	})
+	$('#btn2').on('click', function(){
+// 		$('document.forms[1] p')
+	       $('p', document.forms[1]).css('color', 'red');
+		
+	})
+	$('.dd').on('click', function(){
+		
+		$('p', this).css('font-size', '+=5px')
+	})
+})
+
+</script>
+</head>
+<body>
+
+<div class="box">
+  <h4></h4>
+  <input type="button" value="전체 p선택" id="btn1">
+  <input type="button" value="form의 p선택" id="btn2">
+  <input type="button" value="클릭한 요소 내부에 p선택"  id="btn3">
+  
+  <br><br>
+   <p>무궁화꽃이 피었습니다.</p>
+  
+  <div id="result1" class ="dd">
+   <p>무궁화꽃이 피었습니다.</p>
+  </div>
+  <div id="result2" class="dd">
+   <p>무궁화꽃이 피었습니다.</p>
+  </div>
+<form class="dd">
+   <p>무궁화꽃이 피었습니다.</p>
+</form>
+
+<form class="dd">
+   <p>무궁화꽃이 피었습니다.</p>
+</form>
+</div>
+
+</body>
+</html>

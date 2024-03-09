@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>0308새로운요소만들기</title>
+<link rel="stylesheet" href="../css/public.css">
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script>
+   proc1 = () => {
+      
+      ptag = $('<p class="p1"  onclick="">hello</p>');
+      $('#result1').append(ptag);
+      
+   }
+   
+   $(function(){
+      $('#btn1').on('click', function(){
+         ptag = $('<p class="p1" onclick="alert(\'hi\')">hello</p>');
+         $('#result1').append(ptag);
+      })
+      
+      count = 0;
+      $('#btn2').on('click', function(){
+    	  count ++;
+    	  ptag =$('<p></p>',{
+    		  	'id' :  "pp" + count, 
+    		  	'class' : 'p1',
+    		  	'text'  : 'hello',
+    		  	'click' : function(){
+    		  		alert("hello")
+    		  	}
+    	
+    		  
+    	  })//ptag
+//     	  $('#result2').append(ptag);
+    	  $(ptag).appendTo($('#result2'))
+      })//click
+      $('#btn3').on('click',function(){
+    	  
+    	  //이미지 생성
+//     	  $('<img src = "" alt="">')
+		$('<img>',{
+			'src' : '../images/Koala.jpg',
+			'alt' : 'Koala.jpg',
+			'click': function(){
+// 				this.style.border = "1px solid blue";
+				$(this).css('border', ' 1px solid blue');
+			}
+			
+		}).appendTo($('#result3'))//img
+      })
+   })
+   
+</script>
+
+<style>
+img{
+ width: 80px;
+ height : 80px;
+ margin : 5px;
+}
+</style>
+</head>
+<body>
+
+
+   <div class="box">
+      <h4>버튼을 클릭하면 새로운p태그를 생성해서 result1에 추가<br>
+      $('html문장')
+      </h4>
+      <input type="button" value="확인script" onclick="proc1()"> 
+      <input type="button" value="확인jquery" id="btn1"> 
+      <br> <br>
+      <div id="result1"></div>
+   </div>
+   <div class="box">
+      <h4>버튼을 클릭하면 새로운p태그를 생성해서 result2에 추가<br>
+      $('html태그',{속성들})</h4>
+      <input type="button" value="확인jquery" id="btn2"> 
+      <br> <br>
+      <div id="result2"></div>
+   </div>
+   <div class="box">
+      <h4>버튼을 클릭하면 새로운p태그를 생성해서 result3에 추가<br>
+      $('html태그',{속성들})<br>
+      	이미지를 클릭하면 테두리를 설정
+      </h4>
+      <input type="button" value="이미지추가" id="btn3"> 
+      <br> <br>
+      <div id="result3">
+      </div>
+   </div>
+
+</body>
+</html>

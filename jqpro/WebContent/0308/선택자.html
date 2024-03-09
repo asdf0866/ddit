@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<script src="../js/jquery-3.7.1.min.js"></script>
+
+<script type="text/javascript">
+/* window.onload=function(){
+   
+   
+} */
+
+$(document).ready(function(){
+	$('#btn3').on('click', function(){
+	//전체 배경색을 변경
+	$('#result3').css('background', 'yellow');
+	// h1요소의 글자색을 파랑	
+	$('#result3 h1').css('color', 'blue');
+	//id가 para인 요소의 글자색은 녹색
+	$('#para').css('color', 'green');
+	//class 가 sample요소의 글자색은 빨강
+      $('.sample').css('color', 'red');
+	})
+	
+	//id=btn2 검색 /선택
+	$('#btn2').on('click', function(){
+	
+		//class="ch1" 선택
+		$('.ch1').css('background', 'yellow')
+		
+		//id =cd1 선택
+		$('#cd1').css('border', '2px solid green');
+	})
+	
+	
+	
+	
+/*    // ID검색 - 이벤트 설정(javascript)
+   document.gtElementById('btn1').addEventListener('click', function(){
+      hlist = document.querySelectorAll('#result1 h1');
+      hlist[0].style.color ='yellow';
+      
+   }) */
+   
+   // ID검색 - 이벤트 설정(jquery)
+   $('#btn1').on('click', function(){
+      // h1 검색
+      hlist = $('#result1 h1');
+      hlist.css('color', 'blue');
+      
+      // 하나씩 바꾸려면
+      hlist.eq(1).css('color','red');
+   })
+   
+   
+})
+
+</script>
+</head>
+<body>
+
+
+<div class="box">
+  <h4></h4>
+  <p></p>
+  <input type="button" value="확인" id="btn1">
+  <br><br>
+  <div id="result1">
+    <h1>안녕하세요</h1>
+    <h1>안녕하세요</h1>
+    <h1>안녕하세요</h1>
+    <h1>안녕하세요</h1>
+  </div>
+</div>
+
+<div class="box">
+  <h4></h4>
+  <p></p>
+  <input type="button" value="확인" id="btn2">
+  <br><br>
+  <div id="result2">
+    <h1 class="ch1">매니악</h1>
+    <h1>매니악</h1>
+    <h1 id ="cd1">매니악</h1>
+    <h1>매니악</h1>
+  </div>
+</div>
+<div class="box">
+  <h4></h4>
+  <p></p>
+  <input type="button" value="확인" id="btn3">
+  <br><br>
+  <div id="result3">
+			<h1>제목입니다</h1>
+			<h2 id="para">작은 제목입니다</h2>
+			<h2 class="sample">샘플입니다</h2>
+  </div>
+</div>
+
+</body>
+</html>

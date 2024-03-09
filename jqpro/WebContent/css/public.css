@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+pre{
+	border : 5px double skyblue;
+	background-color : lightgreen;
+	font-size : 1.3rem;
+	padding : 10px;
+	 margin : 20px;
+}
+.box{
+	background: lightgray;
+	margin: 10px;
+	padding: 10px;
+	
+}
+.box div{
+	border : 2px dotted orange;
+	padding : 10px;
+	margin: 10px;
+	
+	
+}
+.box input[type=button]{
+	background : blue;
+	color : white;
+	padding : 10px;
+	border-radius : 20px;
+	width: 80px;
+	
+}
